@@ -9,6 +9,7 @@ import br.com.aquinofb.basicandroidapiclient.R;
  * Created by felipeaquino on 15/11/15.
  */
 public class BaseActivity extends ActionBarActivity {
+
     public void openFragment(Fragment fragment) {
         getSupportFragmentManager().beginTransaction()
                 .setCustomAnimations(

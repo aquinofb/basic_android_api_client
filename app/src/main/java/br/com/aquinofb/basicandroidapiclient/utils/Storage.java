@@ -6,8 +6,6 @@ import android.content.SharedPreferences;
 /**
  * Created by felipeaquino on 14/11/15.
  */
-
-
 public class Storage {
 
     private static final String PREFS_NAME = "BASIC_API_PREFS";

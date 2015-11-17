@@ -81,7 +81,7 @@ public class SignInFragment extends BaseFragment {
         mSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "Foi", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "Sign up view", Toast.LENGTH_LONG).show();
             }
         });
 

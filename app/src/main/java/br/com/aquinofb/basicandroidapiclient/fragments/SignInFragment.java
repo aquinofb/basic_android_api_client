@@ -14,6 +14,7 @@ import android.widget.Toast;
 import br.com.aquinofb.basicandroidapiclient.R;
 import br.com.aquinofb.basicandroidapiclient.api.BasicApiService;
 import br.com.aquinofb.basicandroidapiclient.entities.User;
+import br.com.aquinofb.basicandroidapiclient.utils.Helper;
 import br.com.aquinofb.basicandroidapiclient.utils.Storage;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -30,7 +31,7 @@ public class SignInFragment extends BaseFragment {
     private Context context;
     private Storage storage;
 
-    final RestAdapter restAdapter = new RestAdapter.Builder().setEndpoint("http://localhost:3000").build();
+    final RestAdapter restAdapter = new RestAdapter.Builder().setEndpoint(Helper.host).build();
     final BasicApiService service = restAdapter.create(BasicApiService.class);
 
     @InjectView(R.id.sign_in)

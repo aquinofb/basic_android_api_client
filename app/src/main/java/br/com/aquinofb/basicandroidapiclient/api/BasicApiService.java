@@ -15,8 +15,12 @@ public interface BasicApiService {
     static final String TOKEN = "Auth-Token";
 
     @Headers({ACCEPT_APPLICATION_JSON, CONTENT_TYPE_APPLICATION_JSON})
-    @POST("/users/sign_in")
+    @POST("/authentications/sign_in")
     void signIn(@Body User user, Callback<User> callback);
+
+    @Headers({ACCEPT_APPLICATION_JSON, CONTENT_TYPE_APPLICATION_JSON})
+    @POST("/authentications/sign_up")
+    void signUp(@Body User user, Callback<User> callback);
 }
 
 

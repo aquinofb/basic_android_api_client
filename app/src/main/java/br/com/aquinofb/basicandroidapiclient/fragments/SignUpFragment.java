@@ -1,9 +1,9 @@
 package br.com.aquinofb.basicandroidapiclient.fragments;
 
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,10 +23,11 @@ import retrofit.RestAdapter;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
 
+
 /**
  * Created by felipeaquino on 17/11/15.
  */
-public class SignInFragment extends BaseFragment {
+public class SignUpFragment extends BaseFragment {
 
     private Context context;
     private Storage storage;
@@ -44,25 +45,27 @@ public class SignInFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.sign_in, container, false);
+        View view = inflater.inflate(R.layout.sign_up, container, false);
         ButterKnife.inject(this, view);
 
         context = this.getActivity();
         storage = new Storage(getActivity());
 
-        getActionBar().setTitle("Sign in");
+        getActionBar().setTitle("Sign up");
 
-        mSignIn.setOnClickListener(new View.OnClickListener() {
+        mSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                final TextView mName = (TextView) getActivity().findViewById(R.id.name);
                 final TextView mEmail = (TextView) getActivity().findViewById(R.id.email);
                 final TextView mPassword = (TextView) getActivity().findViewById(R.id.password);
 
                 User user = new User();
+                user.name = mName.getText().toString();
                 user.email = mEmail.getText().toString();
                 user.password = mPassword.getText().toString();
 
-                service.signIn(user, new Callback<User>() {
+                service.signUp(user, new Callback<User>() {
 
                     @Override
                     public void success(User user, Response response) {
@@ -78,10 +81,10 @@ public class SignInFragment extends BaseFragment {
             }
         });
 
-        mSignUp.setOnClickListener(new View.OnClickListener() {
+        mSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openFragment(new SignUpFragment());
+                openFragment(new SignInFragment());
             }
         });
 

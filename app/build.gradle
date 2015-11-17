@@ -22,4 +22,8 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:22.1.1'
+    compile 'com.jakewharton:butterknife:4.0.1'
+    compile 'com.squareup.dagger:dagger:1.2.0'
+    compile 'com.squareup.dagger:dagger-compiler:1.2.0'
+    compile 'com.squareup.retrofit:retrofit:1.7.0'
 }
